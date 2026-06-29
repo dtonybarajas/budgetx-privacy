@@ -15,79 +15,210 @@
         }
         h1 { color: #1a73e8; }
         h2 { color: #444; margin-top: 30px; }
+        h3 { color: #555; margin-top: 20px; }
         .date { color: #666; font-size: 14px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; font-size: 14px; vertical-align: top; }
+        th { background: #f5f7fa; }
+        code { background: #f5f5f5; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
     </style>
 </head>
 <body>
     <h1>Política de Privacidad - BudgetX</h1>
-    <p class="date">Última actualización: Junio 2026</p>
+    <p class="date">Fecha de entrada en vigor: 29 de junio de 2026 · Última actualización: 29 de junio de 2026</p>
+
+    <p>Esta Política de Privacidad describe cómo la aplicación <strong>Budget X</strong>
+    (paquete <code>com.dtonybarajas.budgetx</code>, en adelante "BudgetX", "la app",
+    "nosotros") recopila, usa, almacena y comparte tu información. Al instalar o usar
+    la app, aceptas esta Política. BudgetX está disponible únicamente para Android.</p>
+
+    <h2>0. Responsable del tratamiento</h2>
+    <p>BudgetX es desarrollada por <strong>Tony Barajas (dtonybarajas)</strong>, desarrollador
+    independiente. Para cualquier consulta sobre privacidad puedes escribirnos al correo
+    indicado en la sección de Contacto.</p>
+
     <h2>1. Información que recopilamos</h2>
-    <p>BudgetX recopila la siguiente información:</p>
+
+    <h3>a) Información que proporcionas tú</h3>
     <ul>
-        <li><strong>Datos de cuenta:</strong> Correo electrónico y nombre (si creas una cuenta para sincronización)</li>
-        <li><strong>Datos financieros:</strong> Transacciones, cuentas y categorías que registras en la app</li>
-        <li><strong>Datos de uso:</strong> Eventos anónimos de uso de la app (Firebase Analytics)</li>
-        <li><strong>Datos de crashes:</strong> Reportes anónimos de errores (Firebase Crashlytics)</li>
+        <li><strong>Datos de cuenta (solo si creas una cuenta):</strong> Correo electrónico,
+        nombre que ingresas e identificador interno de usuario (UID de Firebase Auth).
+        No solicitamos número de teléfono ni foto de perfil.</li>
+        <li><strong>Datos financieros:</strong> Transacciones (título, monto, tipo
+        —ingreso, gasto o transferencia—, fecha, moneda, categoría y cuenta asociada),
+        cuentas (nombre, tipo, saldo inicial, color, moneda) y categorías que creas.</li>
+        <li><strong>Preferencias de la app:</strong> Nombre de usuario, moneda, formato de
+        fecha/moneda, tema e idioma. Estas preferencias se guardan <strong>solo en tu
+        dispositivo</strong>.</li>
     </ul>
+
+    <h3>b) Datos recopilados automáticamente</h3>
+    <ul>
+        <li><strong>Datos de uso (Firebase Analytics):</strong> Eventos agregados de uso,
+        como inicio/cierre de sesión, creación/edición/eliminación de transacciones (con su
+        tipo y moneda, sin el título), creación de cuentas y categorías, exportaciones,
+        visualización de pantallas y eventos de anuncios. También propiedades agregadas como
+        rango de número de transacciones y si has iniciado sesión.
+        <strong>No enviamos los títulos ni los montos individuales de tus transacciones a
+        Analytics.</strong></li>
+        <li><strong>Reportes de errores (Firebase Crashlytics):</strong> Información
+        diagnóstica de fallos recopilada de forma automática para mejorar la estabilidad.</li>
+        <li><strong>Datos técnicos:</strong> Para el funcionamiento de los servicios de Google
+        (Firebase, AdMob) puede procesarse información técnica como modelo de dispositivo,
+        versión de Android, identificadores y dirección IP. Esta información es gestionada por
+        Google conforme a sus políticas.</li>
+    </ul>
+
     <h2>2. Cómo usamos la información</h2>
     <ul>
-        <li>Sincronizar tus datos entre dispositivos (si creas una cuenta)</li>
-        <li>Mejorar la experiencia de la app</li>
-        <li>Identificar y corregir errores</li>
-        <li>Mostrar anuncios relevantes (Google AdMob)</li>
+        <li>Guardar y mostrar tus datos financieros dentro de la app.</li>
+        <li>Sincronizar y respaldar tus datos entre dispositivos (solo si creas una cuenta).</li>
+        <li>Generar perspectivas financieras con inteligencia artificial (ver sección 5).</li>
+        <li>Mejorar la experiencia, el rendimiento y la estabilidad de la app.</li>
+        <li>Identificar y corregir errores.</li>
+        <li>Mostrar y medir anuncios (Google AdMob) en la versión gratuita.</li>
     </ul>
+
     <h2>3. Almacenamiento de datos</h2>
     <p>Tus datos financieros se almacenan:</p>
     <ul>
-        <li><strong>Localmente</strong> en tu dispositivo (base de datos local)</li>
-        <li><strong>En la nube</strong> en Firebase/Google Cloud (solo si creas una cuenta)</li>
+        <li><strong>Localmente</strong> en tu dispositivo, en una base de datos local
+        (Room/SQLite) y en las preferencias del sistema (DataStore). La app es totalmente
+        funcional sin conexión y sin necesidad de crear una cuenta.</li>
+        <li><strong>En la nube</strong>, en Cloud Firestore (Firebase / Google Cloud),
+        <strong>únicamente si creas una cuenta e inicias sesión</strong>. Tus datos se guardan
+        en un árbol de documentos asociado a tu identificador de usuario
+        (<code>/users/{uid}</code>), que incluye tu perfil y tus transacciones, cuentas,
+        categorías y datos de uso de IA.</li>
     </ul>
-    <p>Los datos en la nube están protegidos por las medidas de seguridad de Google Cloud Platform.</p>
+    <p>Protegemos el acceso mediante <strong>Firebase App Check</strong> (Play Integrity) y
+    reglas de seguridad de Firestore que garantizan que <strong>solo tú puedes leer y escribir
+    tus propios datos</strong>.</p>
+
     <h2>4. Compartición de datos</h2>
-    <p><strong>No vendemos ni compartimos tus datos financieros con terceros.</strong></p>
-    <p>Los siguientes servicios de terceros procesan datos anónimos:</p>
+    <p><strong>No vendemos tus datos financieros ni los compartimos con terceros con fines de
+    marketing.</strong></p>
+    <p>Para que la app funcione, ciertos datos se procesan a través de los siguientes servicios:</p>
+    <table>
+        <tr><th>Servicio</th><th>Finalidad</th><th>Datos involucrados</th></tr>
+        <tr><td>Firebase Authentication</td><td>Inicio de sesión (solo correo/contraseña)</td><td>Correo, nombre, UID</td></tr>
+        <tr><td>Cloud Firestore</td><td>Respaldo y sincronización en la nube</td><td>Datos financieros (si inicias sesión)</td></tr>
+        <tr><td>Firebase Analytics</td><td>Estadísticas de uso agregadas</td><td>Eventos de uso (sin títulos/montos)</td></tr>
+        <tr><td>Firebase Crashlytics</td><td>Reportes de errores</td><td>Datos diagnósticos de fallos</td></tr>
+        <tr><td>Firebase AI (Google Gemini)</td><td>Perspectivas financieras con IA</td><td>Datos financieros agregados + idioma</td></tr>
+        <tr><td>Google AdMob</td><td>Publicidad (versión gratuita)</td><td>Identificadores de publicidad, datos del dispositivo</td></tr>
+        <tr><td>Google Play Billing</td><td>Compras dentro de la app</td><td>Gestionado por Google Play</td></tr>
+        <tr><td>RestCountries API</td><td>Datos de referencia de países/monedas</td><td>Ninguno personal (solo consulta de referencia)</td></tr>
+    </table>
+
+    <h2>5. Perspectivas con Inteligencia Artificial (Google Gemini)</h2>
+    <p>BudgetX ofrece perspectivas financieras generadas con IA mediante Firebase AI (API de
+    Google Gemini). Para generarlas, enviamos a Google <strong>únicamente datos financieros
+    agregados</strong> (resúmenes por categoría, montos y fechas), el código de moneda y el
+    idioma del sistema. <strong>No se envían los títulos de texto libre de tus transacciones.</strong>
+    Las respuestas generadas se almacenan en caché en tu espacio de Firestore para reducir el
+    número de solicitudes. Esta función está limitada por un número máximo de solicitudes diarias.</p>
+
+    <h2>6. Publicidad (Google AdMob)</h2>
+    <p>La versión gratuita de BudgetX muestra anuncios de <strong>banner</strong> y anuncios
+    <strong>recompensados</strong> a través de Google AdMob. AdMob puede usar identificadores de
+    publicidad y datos del dispositivo para mostrar y medir anuncios. La app está configurada
+    como <strong>no dirigida a niños</strong>.</p>
+    <p>Puedes limitar la publicidad personalizada restableciendo o eliminando tu
+    identificador de publicidad en <em>Ajustes de Google → Anuncios</em> en tu dispositivo, o
+    revisando tus preferencias en <a href="https://myadcenter.google.com">My Ad Center</a>.
+    Eliminar los anuncios mediante la compra "Remove Ads" (ver sección 7) también desactiva
+    la publicidad dentro de la app.</p>
+
+    <h2>7. Compras dentro de la aplicación</h2>
+    <p>BudgetX ofrece la compra opcional <strong>"Remove Ads"</strong> (<code>remove_ads</code>)
+    a través de Google Play Billing. Es una compra <strong>única, no consumible</strong>, que
+    otorga acceso premium y desactiva los anuncios. La transacción es procesada íntegramente por
+    Google Play; <strong>no recibimos ni almacenamos los datos de tu método de pago</strong>. La
+    compra se restaura automáticamente al reinstalar la app con la misma cuenta de Google Play.
+    Los anuncios recompensados funcionan de forma independiente a esta compra.</p>
+
+    <h2>8. Permisos de la aplicación</h2>
+    <p>BudgetX solicita únicamente los siguientes permisos:</p>
     <ul>
-        <li>Google Analytics (uso de la app)</li>
-        <li>Google AdMob (publicidad)</li>
-        <li>Firebase Crashlytics (reportes de errores)</li>
+        <li><strong>INTERNET</strong>: necesario para Firebase, AdMob y la consulta de datos de
+        referencia de monedas.</li>
+        <li><strong>ACCESS_NETWORK_STATE</strong>: para detectar la conexión y reintentar la
+        sincronización pendiente cuando vuelve la conectividad.</li>
     </ul>
-    <h2>5. Publicidad</h2>
-    <p>BudgetX muestra anuncios a través de Google AdMob. AdMob puede usar identificadores
-    de publicidad para mostrar anuncios relevantes. No compartimos tus datos financieros
-    con los anunciantes.</p>
-    <h2>5.1 Compras dentro de la aplicación</h2>
-    <p>BudgetX ofrece la compra opcional "Remove Ads" a través de Google Play Billing.
-    Esta transacción es procesada íntegramente por Google Play y no compartimos
-    información de pago con terceros. La compra es única y no consumible, y se
-    restaura automáticamente al reinstalar la app en el mismo método de pago.</p>
-    <h2>6. Tus derechos</h2>
-    <p>Puedes:</p>
+    <p>No solicitamos permisos de almacenamiento, cámara, ubicación, contactos ni notificaciones.
+    La exportación a CSV utiliza el selector de archivos del sistema (Storage Access Framework),
+    que no requiere permisos de almacenamiento.</p>
+
+    <h2>9. Tus derechos y opciones</h2>
     <ul>
-        <li>Usar la app sin crear cuenta (tus datos quedan solo en tu dispositivo)</li>
-        <li>Eliminar tu cuenta y datos en cualquier momento</li>
-        <li>Exportar tus datos en formato CSV</li>
-        <li>Solicitar la eliminación de tus datos contactándonos</li>
+        <li>Usar la app sin crear cuenta: tus datos permanecen solo en tu dispositivo.</li>
+        <li>Exportar tus transacciones en formato CSV a la ubicación que elijas.</li>
+        <li><strong>Eliminar tu cuenta y todos tus datos de la nube</strong> desde
+        <em>Ajustes → Eliminar cuenta</em> dentro de la app. Este proceso borra de forma
+        permanente tu perfil, transacciones, cuentas, categorías y datos de IA en Firestore,
+        elimina tu usuario de Firebase Authentication y restablece los datos locales.</li>
+        <li>Revocar el acceso o gestionar tu cuenta de Google en
+        <a href="https://myaccount.google.com">tu Cuenta de Google</a>.</li>
     </ul>
-    <h2>7. Seguridad</h2>
-    <p>Implementamos medidas de seguridad incluyendo:</p>
+    <p>Si tienes dificultades para eliminar tus datos desde la app, puedes solicitar la
+    eliminación escribiéndonos al correo de la sección de Contacto.</p>
+
+    <h2>10. Conservación de datos</h2>
+    <p>Conservamos tus datos financieros mientras mantengas la app instalada o una cuenta activa.
+    No aplicamos caducidad automática de tus datos.</p>
     <ul>
-        <li>Autenticación segura con Firebase Auth</li>
-        <li>Reglas de seguridad en Firestore (solo tú accedes a tus datos)</li>
-        <li>Comunicación cifrada (HTTPS/TLS)</li>
+        <li><strong>Al desinstalar la app</strong> se eliminan los datos locales de tu
+        dispositivo, <strong>pero los datos almacenados en la nube (Firestore) NO se eliminan
+        automáticamente.</strong> Para borrarlos debes usar la opción "Eliminar cuenta" dentro
+        de la app antes de desinstalar, o solicitarlo por correo.</li>
+        <li>Android puede realizar copias de seguridad automáticas de los datos de la app en tu
+        cuenta de Google según la configuración de tu sistema.</li>
+        <li>La retención de datos de Analytics y Crashlytics se rige por los plazos
+        predeterminados de Firebase/Google.</li>
     </ul>
-    <h2>8. Cambios a esta política</h2>
-    <p>Podemos actualizar esta política ocasionalmente. Te notificaremos de cambios
-    significativos a través de la app.</p>
-    <h2>9. Contacto</h2>
+
+    <h2>11. Transferencias internacionales de datos</h2>
+    <p>Si creas una cuenta, tus datos se almacenan en la infraestructura de Firebase / Google
+    Cloud, cuyos servidores pueden encontrarse fuera de tu país de residencia. Google aplica
+    medidas de protección conforme a la legislación aplicable. Si te encuentras en el Espacio
+    Económico Europeo o el Reino Unido, tienes derechos bajo el RGPD/UK GDPR, incluido el acceso,
+    rectificación, eliminación y portabilidad de tus datos.</p>
+
+    <h2>12. Privacidad de los menores</h2>
+    <p>BudgetX no está dirigida a niños menores de 13 años y no recopilamos a sabiendas
+    información personal de menores de 13 años. La publicidad está configurada como no dirigida a
+    niños. Si crees que un menor nos ha proporcionado información personal, contáctanos y la
+    eliminaremos.</p>
+
+    <h2>13. Seguridad de los datos</h2>
+    <p>Implementamos medidas de seguridad estándar de la industria, incluyendo:</p>
+    <ul>
+        <li>Autenticación segura con Firebase Authentication.</li>
+        <li>Reglas de seguridad en Firestore (solo tú accedes a tus datos).</li>
+        <li>Protección de acceso con Firebase App Check (Play Integrity).</li>
+        <li>Comunicación cifrada (HTTPS/TLS).</li>
+    </ul>
+    <p>Sin embargo, ningún método de transmisión o almacenamiento es 100% seguro, por lo que no
+    podemos garantizar su seguridad absoluta.</p>
+
+    <h2>14. Cambios a esta política</h2>
+    <p>Podemos actualizar esta política ocasionalmente al añadir funciones o para cumplir con la
+    normativa. Actualizaremos la "Fecha de entrada en vigor" y publicaremos la nueva política en
+    la misma ubicación. Te notificaremos de cambios significativos a través de la app.</p>
+
+    <h2>15. Contacto</h2>
     <p>Si tienes preguntas sobre esta política, contáctanos en:</p>
     <p><strong>Email:</strong> mybudgetx@gmail.com</p>
-    <h2>10. Servicios de terceros</h2>
+
+    <h2>16. Servicios de terceros</h2>
     <p>Enlaces a las políticas de privacidad de los servicios que utilizamos:</p>
     <ul>
-        <li><a href="https://policies.google.com/privacy">Google Play Services</a></li>
+        <li><a href="https://policies.google.com/privacy">Google / Google Play Services</a></li>
         <li><a href="https://firebase.google.com/support/privacy">Firebase</a></li>
-        <li><a href="https://support.google.com/admob/answer/6128543">AdMob</a></li>
+        <li><a href="https://support.google.com/admob/answer/6128543">Google AdMob</a></li>
         <li><a href="https://play.google.com/about/play-terms/">Google Play Billing</a></li>
+        <li><a href="https://ai.google.dev/gemini-api/terms">Google Gemini API</a></li>
     </ul>
 </body>
 </html>
