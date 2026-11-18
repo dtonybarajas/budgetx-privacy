@@ -52,7 +52,7 @@
 <body>
 
 <div id="lang-bar">
-  <label for="lang-select">🌐 Language</label>
+  <label for="lang-select" id="lang-label">🌐 Language</label>
   <select id="lang-select" onchange="setLang(this.value)">
     <option value="es">🇪🇸 Español</option>
     <option value="en">🇺🇸 English</option>
@@ -248,7 +248,7 @@ toc:[
 ],
 s0_title:'0. Responsable del tratamiento y contacto',
 s0:`<p>BudgetX es desarrollada por <strong>Antonio Barajas (conocido como Tony Barajas / dtonybarajas)</strong>, desarrollador independiente.</p>
-<ul><li><strong>Email general de privacidad:</strong> <a href="mailto:mybudgetx@gmail.com">mybudgetx@gmail.com</a></li>
+<ul><li><strong>Correo de privacidad:</strong> <a href="mailto:mybudgetx@gmail.com">mybudgetx@gmail.com</a></li>
 <li><strong>Delegado de Protección de Datos (DPO) / Contacto de privacidad:</strong> <a href="mailto:mybudgetx@gmail.com">mybudgetx@gmail.com</a></li></ul>
 <div class="box-blue"><strong>Usuarios en la UE/EEE y el Reino Unido:</strong> Puedes ejercer tus derechos de protección de datos (RGPD / UK GDPR) en cualquier momento escribiendo a <a href="mailto:mybudgetx@gmail.com">mybudgetx@gmail.com</a>.</div>
 <p>Respondemos en un plazo máximo de <strong>30 días naturales</strong> (pueden aplicar plazos específicos por región).</p>`,
@@ -324,8 +324,8 @@ s9:`
 <h3><span class="rtag">EE.UU.</span> California (CCPA/CPRA) y otros estados</h3>
 <p>La CCPA/CPRA se aplica a empresas que superan ciertos umbrales de ingresos o volumen de datos. Como desarrollador independiente en su primera versión, BudgetX probablemente no alcanza dichos umbrales; aun así, <strong>respetamos voluntariamente estos derechos</strong> para los residentes de California:</p>
 <div class="box-blue"><strong>BudgetX no vende tu información personal.</strong> La versión gratuita muestra anuncios de Google AdMob, que puede usar tu ID de publicidad para personalizarlos; según la CCPA/CPRA, esto puede considerarse "compartir". En los estados de EE. UU. con leyes de privacidad, puedes oponerte en cualquier momento en <em>Ajustes → Legal → Preferencias de privacidad</em>; a partir de entonces verás anuncios no personalizados.</div>
-<ul><li><strong>Categorías de datos (CCPA):</strong> Identificadores (email, ID de cuenta); información financiera sensible (transacciones, cuentas); datos de uso (Analytics, sin montos); diagnósticos (Crashlytics); datos de publicidad (AdMob, versión gratuita).</li>
-<li><strong>Derechos:</strong> Saber · Eliminar · Corregir · Opt-out de venta/intercambio · Limitar uso de información sensible · No discriminación.</li>
+<ul><li><strong>Categorías de datos (CCPA):</strong> Identificadores (correo electrónico, ID de cuenta); información financiera sensible (transacciones, cuentas); datos de uso (Analytics, sin montos); diagnósticos (Crashlytics); datos de publicidad (AdMob, versión gratuita).</li>
+<li><strong>Derechos:</strong> Saber · Eliminar · Corregir · Oponerse a la venta o al intercambio · Limitar uso de información sensible · No discriminación.</li>
 <li>Para ejercerlos: <a href="mailto:mybudgetx@gmail.com">mybudgetx@gmail.com</a>. Respondemos en 45 días (con posible prórroga de 45 días más).</li>
 <li><strong>Otros estados (Virginia, Colorado, Texas, Utah, Oregón…):</strong> Respetamos los derechos equivalentes de todas las leyes estatales vigentes en 2026.</li></ul>
 
@@ -358,7 +358,7 @@ s9:`
 
 <h3><span class="rtag">Resto del mundo</span></h3>
 <ul><li>Puedes usar la app sin cuenta (datos solo en tu dispositivo), exportar en CSV, eliminar tu cuenta desde la app, y contactarnos para cualquier consulta.</li>
-<li><strong>Taiwán (PDPA), Hong Kong (PDPO), Japón (APPI), Corea del Sur (PIPA), Sudáfrica (POPIA), Singapur (PDPA), Nigeria, Nueva Zelanda:</strong> Atendemos derechos de acceso, corrección y eliminación por email.</li>
+<li><strong>Taiwán (PDPA), Hong Kong (PDPO), Japón (APPI), Corea del Sur (PIPA), Sudáfrica (POPIA), Singapur (PDPA), Nigeria, Nueva Zelanda:</strong> Atendemos derechos de acceso, corrección y eliminación por correo electrónico.</li>
 <li><strong>China continental:</strong> BudgetX se distribuye por Google Play, no disponible en China continental. BudgetX no está dirigida a usuarios en China continental.</li></ul>`,
 s10_title:'10. Privacidad de los menores',
 s10:`<p>BudgetX no está dirigida a menores de 13 años (o la edad mínima aplicable en tu país; p. ej., 16 en algunos países de la UE). Si detectamos uso por menores, desactivaremos la cuenta y eliminaremos los datos. Si un padre, madre o tutor legal necesita gestionar la cuenta de un menor, puede contactarnos. Escríbenos a <a href="mailto:mybudgetx@gmail.com">mybudgetx@gmail.com</a> si sabes de un menor que nos haya dado datos.</p>`,
@@ -369,7 +369,7 @@ s11:`<ul><li><strong>Datos locales:</strong> Se eliminan al desinstalar la app.<
 <div class="box-amber"><strong>Importante:</strong> Si desinstalar la app sin eliminar tu cuenta, tus datos financieros permanecen en la nube. Solicita su eliminación a <a href="mailto:mybudgetx@gmail.com">mybudgetx@gmail.com</a>.</div>`,
 s12_title:'12. Transferencias internacionales de datos',
 s12:`<ul><li><span class="rtag">UE/EEE</span> Transferencias a Google (EE.UU.) bajo Cláusulas Contractuales Tipo (SCCs, Art. 46 RGPD).</li>
-<li><span class="rtag">UK</span> UK Addendum a las SCCs.</li>
+<li><span class="rtag">Reino Unido</span> Adenda del Reino Unido a las SCC.</li>
 <li><span class="rtag">Brasil</span> Salvaguardias LGPD Art. 33 + garantías contractuales de Google.</li>
 <li><span class="rtag">Australia</span> Salvaguardias conforme a APP 8.</li>
 <li><span class="rtag">Resto</span> Google aplica medidas de protección por jurisdicción. Ver <a href="https://policies.google.com/privacy">Política de Google</a>.</li></ul>`,
@@ -381,7 +381,7 @@ s13:`<ul><li>Inicio de sesión seguro con Firebase Authentication.</li>
 <p>Ningún método es 100% seguro. Si ocurre una brecha que afecte tus datos, te notificaremos conforme a la normativa aplicable.</p>`,
 s14_title:'14. Cambios a esta política',
 s14:`<ul><li>Actualizaremos la fecha y versión al modificarla.</li>
-<li>Para cambios significativos, te notificaremos en la app o por email.</li>
+<li>Para cambios significativos, te notificaremos en la app o por correo electrónico.</li>
 <li>El historial de versiones está disponible previa solicitud a <a href="mailto:mybudgetx@gmail.com">mybudgetx@gmail.com</a>.</li>
 <li>Esta política está disponible en varios idiomas. Si una traducción difiere de la versión en inglés, prevalece la versión en inglés.</li></ul>`,
 s15_title:'15. Servicios de terceros — Políticas de privacidad',
@@ -393,7 +393,7 @@ s15:`<ul>
 <li><a href="https://ai.google.dev/gemini-api/terms">Google Gemini API</a></li>
 <li><a href="https://restcountries.com">RestCountries API</a></li></ul>`,
 s16_title:'16. Contacto y DPO',
-s16:`<ul><li><strong>Email:</strong> <a href="mailto:mybudgetx@gmail.com">mybudgetx@gmail.com</a></li>
+s16:`<ul><li><strong>Correo electrónico:</strong> <a href="mailto:mybudgetx@gmail.com">mybudgetx@gmail.com</a></li>
 <li><strong>Tiempo de respuesta:</strong> máximo 30 días naturales (pueden aplicar plazos específicos por región).</li>
 <li><strong>Idiomas:</strong> Español, Inglés.</li></ul>`,
 footer:'BudgetX · com.dtonybarajas.budgetx · Política de Privacidad v2.4 · Distribución Global · Noviembre 2026 · Desarrollado por Antonio Barajas (dtonybarajas)',
@@ -966,7 +966,7 @@ s6:`<p>A versão gratuita do BudgetX exibe anúncios de banner e anúncios premi
 <p>Nessas regiões, pedimos seu <strong>consentimento explícito</strong> antes de exibir anúncios personalizados, pelo formulário de consentimento do Google, conforme o RGPD, o UK GDPR e a nLPD suíça. Sem consentimento, apenas anúncios não personalizados são exibidos; o acesso ao app não é afetado.</p>
 <h3>Controle de anúncios</h3>
 <ul><li>Configurações do Google → Anúncios: redefina ou exclua seu ID de publicidade.</li>
-<li>Usuários do EEE, Reino Unido, Suíça e estados dos EUA com leis de privacidade: <em>Configurações → Legal → Preferências de privacidade</em> no app para alterar sua escolha.</li>
+<li>Usuários do EEE, Reino Unido, Suíça e estados dos EUA com leis de privacidade: <em>Configurações → Informações legais → Preferências de privacidade</em> no app para alterar sua escolha.</li>
 <li>Compre "Remove Ads" para remover os anúncios permanentemente.</li></ul>`,
 s7_title:'7. Compras no aplicativo',
 s7:`<p>A compra opcional <strong>"Remove Ads"</strong> é uma compra única e não consumível, processada inteiramente pelo Google Play Billing. <strong>O BudgetX não recebe nem armazena nenhum dado de pagamento.</strong> A compra é restaurada automaticamente quando você reinstala o app com a mesma conta do Google Play.</p>`,
@@ -993,7 +993,7 @@ s9:`
 
 <h3><span class="rtag">EUA</span> Califórnia (CCPA/CPRA) e outros estados</h3>
 <p>A CCPA/CPRA se aplica a empresas que ultrapassam certos limites de receita ou volume de dados. Como desenvolvedor independente em sua primeira versão, o BudgetX provavelmente não atinge esses limites; ainda assim, <strong>respeitamos voluntariamente esses direitos</strong> para residentes da Califórnia:</p>
-<div class="box-blue"><strong>O BudgetX não vende suas informações pessoais.</strong> A versão gratuita exibe anúncios do Google AdMob, que pode usar seu ID de publicidade para personalizá-los; segundo a CCPA/CPRA, isso pode ser considerado "compartilhamento". Nos estados dos EUA com leis de privacidade, você pode recusar a qualquer momento em <em>Configurações → Legal → Preferências de privacidade</em>; depois disso, verá anúncios não personalizados.</div>
+<div class="box-blue"><strong>O BudgetX não vende suas informações pessoais.</strong> A versão gratuita exibe anúncios do Google AdMob, que pode usar seu ID de publicidade para personalizá-los; segundo a CCPA/CPRA, isso pode ser considerado "compartilhamento". Nos estados dos EUA com leis de privacidade, você pode recusar a qualquer momento em <em>Configurações → Informações legais → Preferências de privacidade</em>; depois disso, verá anúncios não personalizados.</div>
 <ul><li><strong>Categorias de informações pessoais coletadas (CCPA):</strong> identificadores (e-mail, ID da conta); informações financeiras sensíveis (transações, contas); dados de uso (Analytics, sem valores); diagnósticos (Crashlytics); dados de publicidade (AdMob, versão gratuita).</li>
 <li><strong>Direitos:</strong> saber · excluir · corrigir · recusar venda/compartilhamento · limitar o uso de informações sensíveis · não discriminação.</li>
 <li>Contato: <a href="mailto:mybudgetx@gmail.com">mybudgetx@gmail.com</a>. Respondemos em até 45 dias (prorrogáveis por mais 45).</li>
@@ -2297,6 +2297,8 @@ function render(lang){
   const t=T[lang];
   document.documentElement.lang=t.lang;
   document.documentElement.dir=t.dir;
+  const LBL={es:'Idioma',en:'Language',fr:'Langue',de:'Sprache',pt:'Idioma',hi:'भाषा',ja:'言語',ko:'언어',ar:'اللغة',zhs:'语言',zht:'語言'};
+  const lb=document.getElementById('lang-label'); if(lb&&LBL[lang]) lb.textContent='🌐 '+LBL[lang];
   const sel=document.getElementById('lang-select');
   if(sel) sel.value=lang;
   const tocItems=t.toc.map((item,i)=>`<li><a href="#${i===17?'delete-account':'s'+i}">${item}</a></li>`).join('');
